@@ -1,0 +1,188 @@
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* ============================================
+   LOGIN
+   ============================================ */
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   TABLAS
+   ============================================ */
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    cursor: default;
+}
+
+.table thead th {
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+    padding: 0.5em 1em;
+    font-size: 0.85em;
+    border-radius: 8px;
+}
+
+/* ============================================
+   ALERTAS
+   ============================================ */
+
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.alert-dismissible .btn-close {
+    padding: 1.25rem;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn i {
+    margin-right: 5px;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,.7);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,.1);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background: rgba(255,255,255,.15);
+    color: #fff;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.main-content {
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADA
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    animation: fadeIn 0.3s ease;
+}

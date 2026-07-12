@@ -1,0 +1,5499 @@
+[2026-06-27T21:36:54.674Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 36ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Login exitoso",
+  "usuario": {
+    "id": 1,
+    "nombre": "Administrador",
+    "usuario": "admin",
+    "rol": "ADMIN",
+    "total_accesos": 22,
+    "ultimo_acceso": "2026-06-27T21:36:54.672Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTYyMTQsImV4cCI6MTc4MjYwMzQxNH0.G4q-EWASvb710uv-DwxZCNO6AiyiR8VD-VEynOuo1r4"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:39:50.226Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 58ms
+│ Datos: {
+  "success": true,
+  "rol": "ADMIN",
+  "menu": [
+    {
+      "id": 1,
+      "nombre": "Dashboard",
+      "icono": "bi bi-speedometer2",
+      "url": "/dashboard",
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Publicaciones",
+      "icono": "bi bi-newspaper",
+      "url": "/publicaciones",
+      "orden": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Crear Publicación",
+      "icono": "bi bi-plus-circle",
+      "url": "/crear-publicacion",
+      "orden": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Mis Borradores",
+      "icono": "bi bi-pencil",
+      "url": "/mis-borradores",
+      "orden": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Usuarios",
+      "icono": "bi bi-people",
+      "url": "/usuarios",
+      "orden": 5
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:39:50.414Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 154ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:40:20.163Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 3ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Sesión cerrada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:40:27.332Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 38ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Login exitoso",
+  "usuario": {
+    "id": 2,
+    "nombre": "Juan Pérez",
+    "usuario": "juan",
+    "rol": "USUARIO",
+    "total_accesos": 22,
+    "ultimo_acceso": "2026-06-27T21:40:27.329Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NjQyNywiZXhwIjoxNzgyNjAzNjI3fQ.CHZwMWE69XquRxAwmmG00CLNJE-DCqirYop6eQih_3E"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:40:29.345Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 22ms
+│ Datos: {
+  "success": true,
+  "rol": "USUARIO",
+  "menu": [
+    {
+      "id": 1,
+      "nombre": "Dashboard",
+      "icono": "bi bi-speedometer2",
+      "url": "/dashboard",
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Publicaciones",
+      "icono": "bi bi-newspaper",
+      "url": "/publicaciones",
+      "orden": 2
+    },
+    {
+      "id": 4,
+      "nombre": "Mis Borradores",
+      "icono": "bi bi-pencil",
+      "url": "/mis-borradores",
+      "orden": 4
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:40:29.435Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 70ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:40:29.451Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 6ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:46:32.646Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 5ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Sesión cerrada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:53:09.193Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 157ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWWCA4I",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTcxODksImV4cCI6MTc4MjYwNDM4OX0.I6qkKkQSRivewpcKKgiBbs1-q2pPvPNTU_lVi10thLE",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 23,
+      "ultimo_acceso": "2026-06-27T21:53:09.186Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:53:10.888Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 34ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:53:10.961Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 60ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:53:53.799Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 7ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:53:53.915Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 78ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:56:34.874Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 7ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:56:43.429Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 37ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWWGVFM",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NzQwMywiZXhwIjoxNzgyNjA0NjAzfQ.B0XtYQleaozLSecAjJLyioXeUFvyt2vCkFbQC8DftrM",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 23,
+      "ultimo_acceso": "2026-06-27T21:56:43.426Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:56:44.951Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 34ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:56:45.082Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 88ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:56:45.114Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 18ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:58:07.177Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 24ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:58:07.305Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 94ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:58:07.337Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 9ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:59:43.061Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 30ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:59:43.192Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 87ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T21:59:43.241Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 26ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:02:41.716Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 7ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:02:46.503Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 59ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWWONL0",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5Nzc2NiwiZXhwIjoxNzgyNjA0OTY2fQ.Rkx8ICCPnJ-2Onl5QuD4UVkgQQtMXhW3cuGkRcABt3U",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 24,
+      "ultimo_acceso": "2026-06-27T22:02:46.500Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:02:47.944Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 32ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:02:48.004Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 45ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:02:48.017Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 5ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:15.286Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 3ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:20.808Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::ffff:127.0.0.1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 26ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWWPE1X",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTc4MDAsImV4cCI6MTc4MjYwNTAwMH0.fzWrHXOh0LER7v-Bn4nf9swXBg9bvANEB_Ch_UokYwY",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 24,
+      "ultimo_acceso": "2026-06-27T22:03:20.805Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:22.242Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 15ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:22.302Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 44ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:23.731Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 40ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:24.696Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 51ms
+│ Datos: {
+  "success": true,
+  "count": 9,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 2,
+      "titulo": "Cómo usar el sistema",
+      "contenido": "Aquí explico cómo usar el sistema de blog paso a paso.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Tutoriales",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:47.352Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/2
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 20ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:48.955Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 78ms
+│ Datos: {
+  "success": true,
+  "count": 8,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "titulo": "Mi primera publicación",
+      "contenido": "Este es el contenido de mi primera publicación en el blog. ¡Bienvenidos!",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "General",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:20:02.000Z",
+      "fecha_publicacion": "2026-06-27T17:20:02.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:51.377Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/1
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 13ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:52.409Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 105ms
+│ Datos: {
+  "success": true,
+  "count": 7,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 4,
+      "titulo": "Qué puede hacer Europa si EE UU bloquea el acceso a la mejor IA: “Estamos en segunda o tercera división",
+      "contenido": "El Gobierno de Trump ha prohibido el modelo Fable, el mejor de Anthropic, a los no estadounidenses. Las consecuencias para el resto de países son difíciles de prever",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Tecnologia",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T17:35:08.000Z",
+      "fecha_publicacion": "2026-06-27T17:36:23.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:54.681Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/4
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 20ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:55.724Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 104ms
+│ Datos: {
+  "success": true,
+  "count": 6,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 5,
+      "titulo": "La Usac es la segunda entidad del Estado que más ha gastado este año en boletos aéreos",
+      "contenido": "La Universidad de San Carlos (Usac) es la segunda entidad pública de todo el aparato estatal que más recursos ha gastado en la compra de boletos aéreos, de acuerdo con datos que arroja una plataforma informática que utiliza La Hora y que se alimenta de información de Guatecompras.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "ARCHIVADO",
+      "fecha_creacion": "2026-06-27T18:06:50.000Z",
+      "fecha_publicacion": "2026-06-27T18:06:50.000Z",
+      "autor_nombre_completo": "Administrador"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:58.627Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/5
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 13ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:03:59.526Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 121ms
+│ Datos: {
+  "success": true,
+  "count": 5,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    },
+    {
+      "id": 6,
+      "titulo": "Más de 2 mil personas han resultado damnificadas durante la temporada de lluvias, según Conred",
+      "contenido": "La Coordinadora Nacional para la Reducción de Desastres (Conred) informó que, desde el inicio de la temporada de lluvias el pasado 19 de abril hasta las 7:00 horas de este 27 de junio, se han registrado 614 emergencias en el territorio nacional, las cuales han dejado 9 personas fallecidas, 9 mil 936 afectadas y 3 mil 506 evacuadas.\n\nDe acuerdo con el informe, Alta Verapaz es el departamento con el mayor número de emergencias, al contabilizar 108 incidentes, seguido de Guatemala con 87, Quiché con 43, Chiquimula con 39, Sacatepéquez con 36 y Quetzaltenango con 35.\n\nEl reporte detalla que las lluvias también han afectado a 2 mil 388 familias, de las cuales 2 mil 89 resultaron damnificadas. Además, 117 personas permanecen albergadas, tres resultaron heridas y siete fueron hospitalizadas.\n\nEn cuanto a los daños materiales, la Conred reporta 225 viviendas con daños leves, mil 769 con daños moderados y 95 con daños severos, mientras que 173 viviendas permanecen en riesgo. Asimismo, se registran afectaciones en 211 carreteras, seis puentes, 15 escuelas, dos edificios públicos y siete redes de energía. También fueron destruidos seis puentes y 15 centros educativos.\n\nLas estadísticas reflejan que la caída de árboles continúa siendo la emergencia más frecuente, con 142 incidentes, seguida de 136 inundaciones, 97 eventos por fuertes vientos y 77 deslizamientos, además de otros eventos como flujos de lodo, derrumbes, socavamientos y colapsos estructurales.",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "Noticias",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:11:47.000Z",
+      "fecha_publicacion": "2026-06-27T18:12:05.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:04.225Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/6
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 18ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:05.137Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 103ms
+│ Datos: {
+  "success": true,
+  "count": 4,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 9,
+      "titulo": "Publicación desde Postman 2",
+      "contenido": "Vamos a publicar algo por aqui",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas2",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:22:23.000Z",
+      "fecha_publicacion": "2026-06-27T20:22:23.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:07.620Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/9
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 25ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:08.512Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 79ms
+│ Datos: {
+  "success": true,
+  "count": 3,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 8,
+      "titulo": "Publicación desde Postman",
+      "contenido": "Esta publicación fue creada usando Postman para pruebas.",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "Pruebas",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:09:21.000Z",
+      "fecha_publicacion": "2026-06-27T20:09:21.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:10.928Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: DELETE
+│ URL: /api/admin/publicaciones/8
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 11ms
+│ Datos: {
+  "success": true,
+  "mensaje": "Publicación eliminada correctamente"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:11.702Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 82ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:37.183Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 1ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:48.369Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 25ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWWR9M6",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5Nzg4OCwiZXhwIjoxNzgyNjA1MDg4fQ.btnAbqwDSQXRxTxS0QE84Gp9sofCULZWmAhPbpsymF8",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 25,
+      "ultimo_acceso": "2026-06-27T22:04:48.366Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:49.832Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 28ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:49.907Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 58ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:04:49.927Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 6ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:09:26.708Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 131ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:09:26.751Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 15ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:09:28.040Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 67ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:14:18.197Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 9ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:14:23.103Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 45ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWX3L31",
+    "token_session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5ODQ2MywiZXhwIjoxNzgyNjA1NjYzfQ.MO8JOA1XBHjBoOVAxuuRC2I57Q0XveZu9sYF8L9ddOY",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 26,
+      "ultimo_acceso": "2026-06-27T22:14:23.101Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:14:24.616Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 37ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:14:24.694Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 64ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:14:24.725Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 9ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:28:58.851Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 5ms
+│ Datos: {
+  "code": 401,
+  "status": "Error",
+  "message": "Token no proporcionado",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:28:58.996Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: null...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 10ms
+│ Datos: {
+  "success": false,
+  "mensaje": "Token inválido"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:29:06.601Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 133ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWXMISN",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 27,
+      "ultimo_acceso": "2026-06-27T22:29:06.599Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:29:08.490Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 54ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:29:08.557Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 6ms
+│ Datos: {
+  "success": false,
+  "mensaje": "Token inválido"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:29:08.596Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 4ms
+│ Datos: {
+  "success": false,
+  "mensaje": "Token inválido"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:30:50.968Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 170ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:30:51.219Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 157ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:30:51.279Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 24ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:12.079Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 36ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:12.362Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 152ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:12.406Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 17ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:13.106Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 3ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:18.684Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 28ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWXPCPM",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 28,
+      "ultimo_acceso": "2026-06-27T22:31:18.682Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:20.244Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::ffff:127.0.0.1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 22ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:20.428Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 78ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:31:20.466Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::ffff:127.0.0.1
+│ Token: undefined...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 14ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:32:31.060Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 98ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:32:31.091Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 9ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:32:32.122Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 77ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:32:33.393Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 101ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:32:39.555Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 4ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:35:15.911Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 114ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWXUFR4",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 26,
+      "ultimo_acceso": "2026-06-27T22:35:15.904Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:35:17.876Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 30ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:35:18.038Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::ffff:127.0.0.1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 74ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:36:44.049Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 11ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:36:44.135Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 91ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:38:27.450Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: NO_TOKEN
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 7ms
+│ Datos: {
+  "success": false,
+  "mensaje": "Token no proporcionado"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:38:56.967Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 277ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWXZ69J",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 27,
+      "ultimo_acceso": "2026-06-27T22:38:56.887Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:39:22.489Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 42ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "ADMIN"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Crear Publicación",
+        "icono": "bi bi-plus-circle",
+        "url": "/crear-publicacion",
+        "orden": 3
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Usuarios",
+        "icono": "bi bi-people",
+        "url": "/usuarios",
+        "orden": 5
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:39:22.530Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 401
+│ Duracion: 17ms
+│ Datos: {
+  "success": false,
+  "mensaje": "Sesión inválida"
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:40:44.624Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 64ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:43:13.697Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 48ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWY4OF0",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 28,
+      "ultimo_acceso": "2026-06-27T22:43:13.693Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:44:23.128Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 98ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:44:39.131Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 44ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:45:02.243Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 22ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWY7066",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 29,
+      "ultimo_acceso": "2026-06-27T22:45:02.238Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:45:49.122Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 56ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:15.306Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 10ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:21.388Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: NO_TOKEN
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 93ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWY8P6U",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 30,
+      "ultimo_acceso": "2026-06-27T22:46:21.318Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:23.601Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/menu
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 35ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Menú cargado correctamente",
+  "header": {
+    "profile": "USUARIO"
+  },
+  "body": {
+    "menu": [
+      {
+        "id": 1,
+        "nombre": "Dashboard",
+        "icono": "bi bi-speedometer2",
+        "url": "/dashboard",
+        "orden": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Publicaciones",
+        "icono": "bi bi-newspaper",
+        "url": "/publicaciones",
+        "orden": 2
+      },
+      {
+        "id": 4,
+        "nombre": "Mis Borradores",
+        "icono": "bi bi-pencil",
+        "url": "/mis-borradores",
+        "orden": 4
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:23.684Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 62ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:23.704Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/publicaciones/mis-borradores
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 7ms
+│ Datos: {
+  "success": true,
+  "count": 0,
+  "borradores": []
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:46:44.740Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/logout
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 2ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Sesión cerrada correctamente",
+  "header": null,
+  "body": null
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:51:53.112Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: {
+  "usuario": "admin",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 31ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "1MQWYFT78",
+    "profile": "ADMIN"
+  },
+  "body": {
+    "usuario": {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "rol": "ADMIN",
+      "total_accesos": 29,
+      "ultimo_acceso": "2026-06-27T22:51:53.108Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Crear Publicación",
+        "href": "/crear-publicacion"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      },
+      {
+        "nombre": "Usuarios",
+        "href": "/usuarios"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:54:16.775Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: GET
+│ URL: /api/admin/publicaciones
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: Sin body
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 296ms
+│ Datos: {
+  "success": true,
+  "count": 2,
+  "publicaciones": [
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z",
+      "autor_nombre_completo": "Administrador"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "imagen": null,
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z",
+      "autor_nombre_completo": "Juan Pérez"
+    }
+  ]
+}
+└─────────────────────────────────────────────────────────────
+        
+[2026-06-27T22:54:25.909Z] 
+┌─────────────────────────────────────────────────────────────
+│ PETICION HTTP
+├─────────────────────────────────────────────────────────────
+│ Metodo: POST
+│ URL: /api/login
+│ IP: ::1
+│ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+│ Body: {
+  "usuario": "juan",
+  "password": "12345"
+}
+├─────────────────────────────────────────────────────────────
+│ RESPUESTA
+│ Status: 200
+│ Duracion: 59ms
+│ Datos: {
+  "code": 200,
+  "status": "Ok",
+  "message": "Ingresado Correctamente",
+  "header": {
+    "id": "2MQWYJ33L",
+    "profile": "USUARIO"
+  },
+  "body": {
+    "usuario": {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "rol": "USUARIO",
+      "total_accesos": 31,
+      "ultimo_acceso": "2026-06-27T22:54:25.906Z"
+    },
+    "pages": [
+      {
+        "nombre": "Dashboard",
+        "href": "/dashboard"
+      },
+      {
+        "nombre": "Publicaciones",
+        "href": "/publicaciones"
+      },
+      {
+        "nombre": "Mis Borradores",
+        "href": "/mis-borradores"
+      }
+    ]
+  }
+}
+└─────────────────────────────────────────────────────────────
+        

@@ -1,0 +1,1084 @@
+{
+  "metadata": {
+    "fecha_exportacion": "2026-07-04T21:29:28.228Z",
+    "version": "1.0",
+    "sistema": "Sistema de Blog con Login",
+    "total_registros": {
+      "usuarios": 3,
+      "publicaciones": 3,
+      "historial": 100
+    }
+  },
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Administrador",
+      "usuario": "admin",
+      "password": "12345",
+      "rol": "ADMIN",
+      "estado": "CONECTADO",
+      "total_accesos": 52,
+      "ultimo_acceso": "2026-07-04T21:29:28.000Z",
+      "ultima_ip": "::1"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "usuario": "juan",
+      "password": "12345",
+      "rol": "USUARIO",
+      "estado": "CONECTADO",
+      "total_accesos": 38,
+      "ultimo_acceso": "2026-07-04T21:24:35.000Z",
+      "ultima_ip": "::1"
+    },
+    {
+      "id": 6,
+      "nombre": "Ana Torres",
+      "usuario": "ana",
+      "password": "12345",
+      "rol": "USUARIO",
+      "estado": "DESCONECTADO",
+      "total_accesos": 2,
+      "ultimo_acceso": "2026-07-04T15:48:59.000Z",
+      "ultima_ip": "::1"
+    }
+  ],
+  "publicaciones": [
+    {
+      "id": 11,
+      "titulo": "Borrador de prueba",
+      "contenido": "Mi borrador de prueba",
+      "autor_id": 6,
+      "autor_nombre": "Usuario",
+      "categoria": "Pruebas",
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-07-04T15:24:59.000Z",
+      "fecha_publicacion": "2026-07-04T16:01:37.000Z"
+    },
+    {
+      "id": 10,
+      "titulo": "Publicación desde Postman 3",
+      "contenido": "La tecnologia hoy en dia avanza a pasos agigantados",
+      "autor_id": 1,
+      "autor_nombre": "Administrador",
+      "categoria": "TECNOLOGIA",
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T20:49:19.000Z",
+      "fecha_publicacion": "2026-06-27T20:49:19.000Z"
+    },
+    {
+      "id": 7,
+      "titulo": "Probando",
+      "contenido": "Esto es una prueba de testeo",
+      "autor_id": 2,
+      "autor_nombre": "Usuario",
+      "categoria": "No se",
+      "estado": "PUBLICADO",
+      "fecha_creacion": "2026-06-27T18:19:19.000Z",
+      "fecha_publicacion": "2026-06-27T18:19:43.000Z"
+    }
+  ],
+  "historial": [
+    {
+      "id": 145,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T21:29:28.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMjAwNTY4LCJleHAiOjE3ODMyMDc3Njh9.gm7Pe4khs5V9CLvfbA4AJDZ6ACbI3QJ8PYCMfci5zwc",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 144,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Mobile Safari/537.36",
+      "fecha_acceso": "2026-07-04T21:24:35.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMyMDAyNzUsImV4cCI6MTc4MzIwNzQ3NX0.lDifm525_EwPPvHLAKaJgyw63IwrehAAlQ-azCcZyLA",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 143,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T21:06:40.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 142,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T21:06:30.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTk5MTg5LCJleHAiOjE3ODMyMDYzODl9.7VFYCKBUkM024_-6IrytaozNYQnQsDrBRkVviBOb2vg",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 141,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T21:06:22.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 140,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T20:55:20.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTk4NTIwLCJleHAiOjE3ODMyMDU3MjB9.6kNdOz6Cr-nU-aCh15aZvZLM99GlqP6yoEipN0p4X8I",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 139,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T20:04:24.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 138,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
+      "fecha_acceso": "2026-07-04T19:36:56.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTkzODE2LCJleHAiOjE3ODMyMDEwMTZ9.xydjn-AOox1X_7Pzt7rKAudd0N42zzqBfkGY3_p66do",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 137,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T19:36:37.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 136,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T19:34:10.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTkzNjQ5LCJleHAiOjE3ODMyMDA4NDl9.vY2d9ZTwA5WWq4kWo3Zm7HgJahxvimu8Ci99hyDGt9U",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 135,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
+      "fecha_acceso": "2026-07-04T17:59:10.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTg3OTUwLCJleHAiOjE3ODMxOTUxNTB9.x-RQlqF1kRScGOh018JWxgEDOOtiNY_5sB5C_OqMj1c",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 134,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T17:58:59.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 133,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T17:48:57.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTg3MzM3LCJleHAiOjE3ODMxOTQ1Mzd9.HYYXt9Tapo1wDiqx8apyxCUKMjZ0-xQ86hvHsCiBtRY",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 132,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T17:48:47.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 131,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T17:27:30.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTg2MDUwLCJleHAiOjE3ODMxOTMyNTB9.D6UBgOAWGqKcgph92xudsjHedKSFK2isNNVmg6qEHUo",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 130,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T17:27:26.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 129,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:57:21.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTg0MjQxLCJleHAiOjE3ODMxOTE0NDF9.5qghpq2mfIclGKQLSIfHdJ_fGZarONHJ9MZiKVfdXfY",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 128,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:55:02.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 127,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:53:57.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTg0MDM3LCJleHAiOjE3ODMxOTEyMzd9.yFxsA7GlJb_XcHsbf_xKmh32-8bcKXMpS33yqwIOqC0",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 126,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:53:20.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 125,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Mobile Safari/537.36",
+      "fecha_acceso": "2026-07-04T16:52:04.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgzOTI0LCJleHAiOjE3ODMxOTExMjR9.bU3j2tXmTTOxVJQZ_nON_dmuhGJcvFCVik_HQTc7vSw",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 124,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:44:51.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 123,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:39:04.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgzMTQ0LCJleHAiOjE3ODMxOTAzNDR9.oqQRD4myMP4Go29V9Eg78vGSuF4IY48CZHCNSaSn_Kk",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 122,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:36:43.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 121,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:36:24.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgyOTg0LCJleHAiOjE3ODMxOTAxODR9.GqkeFrJQ9TB9crFm-YJ8Ay0iGvfPZ0GWlNbWUjM-yH8",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 120,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:34:43.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 119,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:27:36.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxODI0NTYsImV4cCI6MTc4MzE4OTY1Nn0.Z2zHLvHnWcvHsk21VYoF0GsNFHdjeJc2bR89cGhwfZM",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 118,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.54.0",
+      "fecha_acceso": "2026-07-04T16:26:14.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgyMzc0LCJleHAiOjE3ODMxODk1NzR9.7dG_NnO54wiLU23pEZMC1loppOGCVX_3NZk6k2-D-OI",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 117,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:19:18.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 116,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:17:50.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxODcwLCJleHAiOjE3ODMxODkwNzB9.jWdywFL3qdUe7iv5jXEB3SGLp5DwkBXPt3_NLnH0Ooc",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 115,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:17:43.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 114,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:16:09.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxNzY5LCJleHAiOjE3ODMxODg5Njl9.4nt2I1IM5gOcbVbwTRlPz_aRVIycU1i6JgipjAHPU2Y",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 113,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:15:41.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxNzQxLCJleHAiOjE3ODMxODg5NDF9.ae-UwN-eW09v0EHFMgTW4VONQmD0uEJtn-dldEJ1ddY",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 112,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:13:52.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 111,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:13:39.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxNjE5LCJleHAiOjE3ODMxODg4MTl9.qc4ruu3Xi2eSnqRohHKSVGLUXhEw5NxaCE_0bq5DD9w",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 110,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:10:49.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxNDQ5LCJleHAiOjE3ODMxODg2NDl9.YQEfABMv6l4-ZxNYEMvdesEPOsvzaVM18Rj_XtkD4Ts",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 109,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:09:51.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxMzkxLCJleHAiOjE3ODMxODg1OTF9.yPpMoK7CNqodaaqZsF8hKz2RvNSji0kWaFkoM2pZ-BI",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 108,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T16:08:56.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgxMzM2LCJleHAiOjE3ODMxODg1MzZ9.k2WiVxkiLpHXsaZAD9Ts4l2ePZdnF_VZ3tgYj-SNsSA",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 107,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T16:05:40.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 106,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:57:37.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTgwNjU3LCJleHAiOjE3ODMxODc4NTd9.Yc7eL_nsX4m6juVWjK3gRIus9hHxXANeQghYXoCwRwI",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 105,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T15:57:17.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 104,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:57:03.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxODA2MjMsImV4cCI6MTc4MzE4NzgyM30.cFQhiVkW4Jh2lI-TDkQrKu-nsVh2Z-HUupG7BJG2i38",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 103,
+      "usuario_id": 6,
+      "usuario_nombre": "ana",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T15:50:33.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 102,
+      "usuario_id": 6,
+      "usuario_nombre": "ana",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:48:59.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJhbmEiLCJub21icmUiOiJBbmEgVG9ycmVzIiwiaWF0IjoxNzgzMTgwMTM5LCJleHAiOjE3ODMxODczMzl9.RkT2_jK6LrGvg_ek8JGji_BIPRpTxj2UzXmuk1WDAaE",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 101,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T15:48:44.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 100,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:48:07.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxODAwODcsImV4cCI6MTc4MzE4NzI4N30.u6Y-f0eAWNCMRokhLpD2B27X0mfhCQx5nWYE208W_mU",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 99,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:48:06.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxODAwODYsImV4cCI6MTc4MzE4NzI4Nn0.JcLGM9I0T3rJ5XDp_ekdolZEAbfFyqbzvuMyT6DV1e4",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 98,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:47:57.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxODAwNzcsImV4cCI6MTc4MzE4NzI3N30.iM_gfeqoYN-mM2GxhkJXsdxwngqn97_Bgdcs4nGCXUM",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 96,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:30:39.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsInVzdWFyaW8iOiJqdWFuIiwibm9tYnJlIjoiSnVhbiBQw6lyZXoiLCJpYXQiOjE3ODMxNzkwMzksImV4cCI6MTc4MzE4NjIzOX0.SCDVwDU_SxszD8U8ozXH_aZI3-PhHEzXZUkjkDbV0Xw",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 95,
+      "usuario_id": 2,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T15:30:33.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 94,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:30:29.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJ1c3VhcmlvIjoiYWRtaW4iLCJub21icmUiOiJBZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzgzMTc5MDI5LCJleHAiOjE3ODMxODYyMjl9.UYL-15HkXQ9DbWXk26kRfo56VdwPhb5W5YQyrDkk3oE",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 93,
+      "usuario_id": 1,
+      "usuario_nombre": "ana",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-07-04T15:27:24.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 92,
+      "usuario_id": 6,
+      "usuario_nombre": "ana",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-07-04T15:11:22.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MzE3Nzg4MiwiZXhwIjoxNzgzMTg1MDgyfQ.T3NlVw16_yDroxay2UbrHuAJVFI1hZMD_dJGPOnTN3U",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 91,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T22:54:25.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjYwMDg2NSwiZXhwIjoxNzgyNjA4MDY1fQ.qBbh4c62Obxq6ZytdFaaV33NyuogZFh-hXN3bzZWqXQ",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 90,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T22:51:53.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI2MDA3MTMsImV4cCI6MTc4MjYwNzkxM30.e2IuQ2s7qYZSOGdJOlt1BST5Ew11BbY25pzbIjUFsrU",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 89,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:46:44.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 88,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:46:21.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjYwMDM4MSwiZXhwIjoxNzgyNjA3NTgxfQ.xhYybOwYmLYUfsQ3O_iEhYanzbt-p7J8gdQqIHnNUJw",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 87,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T22:45:02.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjYwMDMwMiwiZXhwIjoxNzgyNjA3NTAyfQ.cSGkTmxyb9wn4SxlU4DLHdoIzqjtPegnR6_9MxpFr0w",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 86,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T22:43:13.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI2MDAxOTMsImV4cCI6MTc4MjYwNzM5M30.6Ro4jhv_fXEQ4VaxPFc9ic04y7lAuUAZouM7WVNb0ew",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 85,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T22:38:56.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTk5MzYsImV4cCI6MTc4MjYwNzEzNn0.UKMLmKmEk_7j2E_dfkqBRQo02S1Nmk0MI00wCYIRpEw",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 84,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:35:15.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTk3MTUsImV4cCI6MTc4MjYwNjkxNX0.yMSOHfjfjM7OJPihkM1SW5RIcdHz-nbZtz0PvJhY9Ns",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 83,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:32:44.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTk1NjQsImV4cCI6MTc4MjYwNjc2NH0.qemPjMqdPQOH_vg1pY5_O0dqPXiYJNe62FE24M_GExE",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 82,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:32:39.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 81,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:31:18.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5OTQ3OCwiZXhwIjoxNzgyNjA2Njc4fQ.r9DrKj6ahRybQLtW7-_AlRMMyvpbD9ySXu-1w5SNmKE",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 80,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:31:13.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 79,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Linux; Android) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 CrKey/1.54.248666 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:29:06.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5OTM0NiwiZXhwIjoxNzgyNjA2NTQ2fQ.4q-vsuUeU9JyGSLkirlisqFEtFmMMcizlf3ME6wDD98",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 78,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:14:23.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5ODQ2MywiZXhwIjoxNzgyNjA1NjYzfQ.MO8JOA1XBHjBoOVAxuuRC2I57Q0XveZu9sYF8L9ddOY",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 77,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:14:18.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 76,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:04:48.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5Nzg4OCwiZXhwIjoxNzgyNjA1MDg4fQ.btnAbqwDSQXRxTxS0QE84Gp9sofCULZWmAhPbpsymF8",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 75,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:04:37.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 74,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::ffff:127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:03:20.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTc4MDAsImV4cCI6MTc4MjYwNTAwMH0.fzWrHXOh0LER7v-Bn4nf9swXBg9bvANEB_Ch_UokYwY",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 73,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:03:15.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 72,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T22:02:46.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5Nzc2NiwiZXhwIjoxNzgyNjA0OTY2fQ.Rkx8ICCPnJ-2Onl5QuD4UVkgQQtMXhW3cuGkRcABt3U",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 71,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T22:02:41.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 70,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:56:43.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NzQwMywiZXhwIjoxNzgyNjA0NjAzfQ.B0XtYQleaozLSecAjJLyioXeUFvyt2vCkFbQC8DftrM",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 69,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:56:34.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 68,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:53:09.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTcxODksImV4cCI6MTc4MjYwNDM4OX0.I6qkKkQSRivewpcKKgiBbs1-q2pPvPNTU_lVi10thLE",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 67,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:46:32.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 66,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:40:27.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NjQyNywiZXhwIjoxNzgyNjAzNjI3fQ.CHZwMWE69XquRxAwmmG00CLNJE-DCqirYop6eQih_3E",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 65,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:40:20.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 64,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:36:54.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTYyMTQsImV4cCI6MTc4MjYwMzQxNH0.G4q-EWASvb710uv-DwxZCNO6AiyiR8VD-VEynOuo1r4",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 63,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:36:47.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 62,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:28:15.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NTY5NSwiZXhwIjoxNzgyNjAyODk1fQ.zmO6Wc5Bmk2KP2Jip5EgczoDMTR5_RnMCcgY61fekSQ",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 61,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:28:10.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 60,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:28:00.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTU2ODAsImV4cCI6MTc4MjYwMjg4MH0.W_8Kj5CUsr1B9mPv4d2CbPZu5Wop_Vet-_fFADhRRVU",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 59,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:27:54.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 58,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:22:51.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTUzNzEsImV4cCI6MTc4MjYwMjU3MX0.Prkaoo7rJ01cVH-ofLKQXSTiX2mZBuGgewxAS72arx0",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 57,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:22:13.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 56,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:21:36.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5NTI5NiwiZXhwIjoxNzgyNjAyNDk2fQ.mDPKPtmj9QHJi6rMDky6XOk6tbT3GWvNUCgEgqTbWfA",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 55,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T21:21:25.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 54,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T21:20:59.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTUyNTksImV4cCI6MTc4MjYwMjQ1OX0.C-o2Xu4kcecDsbtc82KlHAIs8Ns4D3694rkR6fNdC68",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 53,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T20:54:21.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5MzY2MSwiZXhwIjoxNzgyNjAwODYxfQ.5_NAmsHkAVH3Na-JnR2wsdYkC2JQ69keawJ5w4gTS5M",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 52,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T20:54:10.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTM2NTAsImV4cCI6MTc4MjYwMDg1MH0.fTW8D2GHXNDI7_o0GjTLZ4NLNNTt-7gxZRfhPjhfwO4",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 51,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T20:53:27.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5MzYwNywiZXhwIjoxNzgyNjAwODA3fQ.Ol3wKNfnfCX2DJnWX904XshbUbbzaL0ZzjgAxMJTzTo",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 50,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T20:53:19.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 49,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "fecha_acceso": "2026-06-27T20:52:44.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTM1NjQsImV4cCI6MTc4MjYwMDc2NH0.2dGcGjrLSMKRM17fPcYeG9-lFC-i2jHzuL7EtMWBk0w",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 48,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T20:48:18.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU4iLCJpYXQiOjE3ODI1OTMyOTgsImV4cCI6MTc4MjYwMDQ5OH0.Wo-cEFWXtTlTTFPIUO-GulAN4fWKwiKaqSNot9wMYX4",
+      "estado": "EXITOSO"
+    },
+    {
+      "id": 47,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T20:47:51.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 46,
+      "usuario_id": 1,
+      "usuario_nombre": "admin",
+      "ip_address": null,
+      "user_agent": null,
+      "fecha_acceso": "2026-06-27T20:47:19.000Z",
+      "token_generado": null,
+      "estado": "CERRADO_SESION"
+    },
+    {
+      "id": 45,
+      "usuario_id": 2,
+      "usuario_nombre": "juan",
+      "ip_address": "::1",
+      "user_agent": "PostmanRuntime/7.53.0",
+      "fecha_acceso": "2026-06-27T20:44:38.000Z",
+      "token_generado": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4MjU5MzA3OCwiZXhwIjoxNzgyNjAwMjc4fQ.oP_aaBt7xrs0yNOS1WkGs7-d3iW7GtR1qYv2s-UkqJ8",
+      "estado": "EXITOSO"
+    }
+  ]
+}
