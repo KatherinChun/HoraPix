@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoraPix - Panel de Administración</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        HoraPix Admin
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="admin.html" class="active">📊 Resumen</a></li>
+        <li><a href="admin.html">📅 Control de Citas</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button onclick="Auth.logout()" class="btn btn-secondary btn-sm" style="width: 100%;">Cerrar Sesión</button>
+      </div>
+    </aside>
+
+    <!-- Main  -->
+    <main class="main-content">
+      <div class="flex-between mb-4">
+        <div>
+          <h2>Panel de Control General</h2>
+          <p style="color: var(--text-muted);">Supervisión de citas, agenda y estadísticas globales.</p>
+        </div>
+      </div>
+
+      <!-- Stat Widgets Grid -->
+      <div class="grid grid-4 mb-4">
+        <div class="stat-card">
+          <div>
+            <div class="stat-label">Total Citas</div>
+            <div class="stat-value" id="stat-total">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div>
+            <div class="stat-label">Confirmadas</div>
+            <div class="stat-value" id="stat-confirmed" style="color: var(--success);">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div>
+            <div class="stat-label">Pendientes</div>
+            <div class="stat-value" id="stat-pending" style="color: var(--warning);">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div>
+            <div class="stat-label">Clientes Registrados</div>
+            <div class="stat-value" id="stat-clients" style="color: var(--primary);">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Management Table -->
+      <h3 class="mb-4">Gestión de Citas Recientes</h3>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Servicio</th>
+              <th>Fecha y Hora</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="admin-citas-list">
+            <!-- Dynamic Citas loaded here -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

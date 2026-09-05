@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoraPix · Reserva tu cita en segundos</title>
+<meta name="description" content="HoraPix — sistema de agendamiento digital. Visualiza horarios disponibles en tiempo real y confirma tu cita al instante.">
+<style>
+/* =====================================================================
+   TOKENS DE DISEÑO — coherentes con el resto de vistas de HoraPix
+   (en la versión modular final este bloque vive en /css/theme.css)
+   ===================================================================== */
+:root{
+  --navy-900:#0B1524; --navy-800:#111E33; --navy-700:#1B2A42; --navy-600:#28394F;
+  --pink-500:#E31C79; --pink-600:#C2135F; --pink-50:#FDEAF1;
+  --bg:#F5F6FA; --white:#FFFFFF;
+  --text:#111827; --text-soft:#6B7280;
+  --border:#E5E7EB;
+  --success:#16A34A; --success-bg:#DCFCE7;
+  --warning:#B45309; --warning-bg:#FEF3C7;
+  --danger:#DC2626;  --danger-bg:#FEE2E2;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:20px;
+  --shadow-md:0 8px 24px rgba(15,23,42,.10);
+  --shadow-lg:0 20px 45px rgba(15,23,42,.18);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+.container{max-width:1180px;margin:0 auto;padding:0 24px;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+:focus-visible{outline:3px solid var(--pink-500);outline-offset:2px;}
+
+/* ---------- Botones ---------- */
+.btn{font-family:inherit;font-size:.9rem;font-weight:700;letter-spacing:.02em;border-radius:10px;padding:.85rem 1.4rem;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;text-decoration:none;}
+.btn:active{transform:translateY(1px);}
+.btn-pink{background:var(--pink-500);color:#fff;}
+.btn-pink:hover{background:var(--pink-600);box-shadow:var(--shadow-md);}
+.btn-dark{background:var(--navy-900);color:#fff;}
+.btn-dark:hover{background:#040a13;box-shadow:var(--shadow-md);}
+.btn-outline{background:transparent;color:var(--navy-900);border-color:var(--border);}
+.btn-outline:hover{border-color:var(--navy-800);}
+.btn-ghost{background:transparent;color:var(--text-soft);}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
+.btn-block{width:100%;}
+.btn .spinner{display:none;}
+.btn.is-loading .spinner{display:inline-block;}
+.btn.is-loading .btn-label{opacity:.75;}
+.spinner{width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ---------- Header ---------- */
+.topbar{background:var(--navy-900);color:#fff;position:sticky;top:0;z-index:40;}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1180px;margin:0 auto;}
+.logo{font-size:1.35rem;font-weight:800;letter-spacing:.01em;}
+.logo .pix{color:var(--pink-500);}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0;}
+.nav-links a{text-decoration:none;color:#CBD5E1;font-size:.92rem;font-weight:600;}
+.nav-links a:hover{color:#fff;}
+.nav-links a.current{color:#fff;}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.menu-toggle{display:none;background:none;border:0;color:#fff;padding:6px;cursor:pointer;}
+@media (max-width:820px){
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy-900);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .nav-links.open{max-height:260px;}
+  .nav-links a{display:block;padding:14px 24px;border-top:1px solid var(--navy-700);}
+  .menu-toggle{display:block;}
+}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--navy-900);color:#fff;padding:64px 0 90px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start;}
+.eyebrow{color:#94A3B8;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin:0 0 14px;}
+.hero h1{font-size:2.5rem;line-height:1.15;margin:0 0 18px;font-weight:800;letter-spacing:-.01em;}
+.hero h1 .accent{color:var(--pink-500);display:block;}
+.hero p{color:#B7C0CD;font-size:1.02rem;line-height:1.6;max-width:46ch;margin:0 0 30px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.hero-actions .secondary-link{font-size:.88rem;font-weight:600;color:#CBD5E1;text-decoration:underline;text-underline-offset:3px;}
+
+/* ---------- Card: Agendamiento Rápido ---------- */
+.card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);}
+.quick-card{padding:28px;color:var(--text);}
+.quick-card h2{margin:0 0 20px;font-size:1.15rem;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:.78rem;font-weight:700;color:var(--navy-800);margin-bottom:8px;}
+.field select,.field input,.field textarea{width:100%;font-family:inherit;font-size:.92rem;padding:.72rem .85rem;border:1.5px solid var(--border);border-radius:10px;background:#fff;color:var(--text);}
+.field select:focus,.field input:focus,.field textarea:focus{border-color:var(--pink-500);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field-error{display:none;color:var(--danger);font-size:.76rem;margin-top:6px;font-weight:600;}
+.field.has-error select,.field.has-error input{border-color:var(--danger);}
+.field.has-error .field-error{display:block;}
+.help-text{font-size:.72rem;color:var(--text-soft);margin-top:6px;}
+
+#resultadosDisponibilidad{margin-top:20px;border-top:1px dashed var(--border);padding-top:18px;display:none;}
+#resultadosDisponibilidad.visible{display:block;}
+.slot-title{font-size:.8rem;font-weight:700;color:var(--navy-800);margin:0 0 12px;}
+.slot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;}
+.slot-info strong{display:block;font-size:.88rem;}
+.slot-info span{font-size:.76rem;color:var(--text-soft);}
+.empty-note{font-size:.85rem;color:var(--text-soft);padding:10px 0;}
+
+/* ---------- Por qué agendar ---------- */
+.section{padding:70px 0;}
+.section-light{background:var(--bg);}
+.section h2{font-size:1.6rem;margin:0 0 34px;text-align:left;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.feature-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px;transition:box-shadow .2s ease, transform .2s ease;}
+.feature-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.icon-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:#fff;}
+.icon-circle.pink{background:var(--pink-500);}
+.icon-circle.navy{background:var(--navy-900);}
+.feature-card h3{margin:0 0 8px;font-size:1.02rem;}
+.feature-card p{margin:0;font-size:.88rem;color:var(--text-soft);line-height:1.55;}
+
+/* ---------- Cómo funciona ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step;}
+.step{position:relative;padding:26px 22px 22px;background:#fff;border-radius:var(--radius-md);border:1px solid var(--border);}
+.step-num{font-size:.75rem;font-weight:800;color:var(--pink-500);letter-spacing:.06em;margin-bottom:10px;}
+.step h3{margin:0 0 8px;font-size:.98rem;}
+.step p{margin:0;font-size:.86rem;color:var(--text-soft);line-height:1.55;}
+
+/* ---------- Especialidades ---------- */
+.chips{display:flex;gap:12px;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:.65rem 1.1rem;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:.86rem;font-weight:600;}
+.chip.available{border-color:var(--pink-500);color:var(--navy-900);}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--success);}
+.chip.soon{color:var(--text-soft);}
+.chip.soon .dot{background:#CBD5E1;}
+.chip .tag-soon{background:var(--neutral-bg,#F3F4F6);color:var(--text-soft);font-size:.68rem;padding:2px 8px;border-radius:999px;font-weight:700;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy-900);color:#94A3B8;padding:26px 0;font-size:.82rem;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-inner strong{color:var(--pink-500);}
+
+/* ---------- Banner de sesión (portal cliente) ---------- */
+.info-banner{background:var(--pink-50);color:var(--pink-600);border-bottom:1px solid #F8CFE0;padding:12px 0;font-size:.86rem;font-weight:600;display:none;}
+.info-banner.visible{display:block;}
+.info-banner .container{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.info-banner button{background:none;border:0;color:var(--pink-600);font-weight:800;cursor:pointer;font-size:1rem;line-height:1;}
+
+/* ---------- Modal ---------- */
+.modal-overlay{position:fixed;inset:0;background:rgba(11,21,36,.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:100;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:var(--radius-lg);max-width:460px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;position:relative;box-shadow:var(--shadow-lg);}
+.modal h3{margin:0 0 6px;font-size:1.15rem;}
+.modal .modal-sub{font-size:.85rem;color:var(--text-soft);margin:0 0 20px;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:0;cursor:pointer;color:var(--text-soft);font-size:1.2rem;line-height:1;padding:4px;}
+.booking-summary{background:var(--bg);border-radius:10px;padding:14px;margin-bottom:20px;font-size:.85rem;}
+.booking-summary div{display:flex;justify-content:space-between;padding:3px 0;}
+.booking-summary span:first-child{color:var(--text-soft);}
+.booking-summary span:last-child{font-weight:700;}
+.file-drop{border:1.5px dashed var(--border);border-radius:10px;padding:16px;text-align:center;font-size:.82rem;color:var(--text-soft);cursor:pointer;}
+.file-drop.has-file{border-color:var(--success);color:var(--success);background:var(--success-bg);}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-900);color:#fff;padding:16px 22px;border-radius:12px;box-shadow:var(--shadow-lg);display:flex;gap:12px;align-items:flex-start;max-width:420px;opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:200;}
+.toast.visible{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+.toast strong{display:block;margin-bottom:2px;font-size:.9rem;}
+.toast p{margin:0;font-size:.82rem;color:#CBD5E1;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .grid-3,.steps{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="info-banner" id="clientPortalBanner">
+  <div class="container">
+    <span>Tu portal de cliente está en camino 🚧 — mientras tanto, agenda tu próxima cita aquí abajo.</span>
+    <button type="button" aria-label="Cerrar aviso" onclick="document.getElementById('clientPortalBanner').classList.remove('visible')">×</button>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">HORA<span class="pix">PIX</span></div>
+    <nav aria-label="Navegación principal">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="current">Inicio</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#como-funciona">Cómo Funciona</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <a class="btn btn-pink" id="loginCta" href="login.html">Inicia Sesión</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Sistema de Agendamiento Digital</p>
+      <h1>Reserva tu cita en segundos,<span class="accent">sin llamadas ni esperas.</span></h1>
+      <p>Visualiza únicamente los horarios disponibles en tiempo real. Confirmación e integración inmediata con tu agenda.</p>
+      <div class="hero-actions">
+        <button class="btn btn-pink" id="btnExplorar" type="button">Explorar Citas</button>
+        <a class="secondary-link" href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+      </div>
+    </div>
+
+    <div class="card quick-card" id="agendamiento">
+      <h2>Agendamiento Rápido</h2>
+      <form id="formDisponibilidad" novalidate>
+        <div class="field" id="fieldEspecialidad">
+          <label for="especialidad">1. Selecciona Especialidad</label>
+          <select id="especialidad" name="especialidad">
+            <option value="Psicología Clínica">Clínica Psicológica</option>
+            <option value="Medicina General" disabled>Medicina General (próximamente)</option>
+          </select>
+          <p class="field-error">Selecciona una especialidad.</p>
+        </div>
+        <div class="field" id="fieldFechaHora">
+          <label for="fecha">2. Fecha y Hora Disponible</label>
+          <div class="field-row">
+            <input type="date" id="fecha" name="fecha" required>
+            <input type="time" id="hora" name="hora" value="10:00" required>
+          </div>
+          <p class="field-error">Elige una fecha y hora válidas (no puede ser en el pasado).</p>
+        </div>
+        <button class="btn btn-dark btn-block" id="btnVerDisponibilidad" type="submit">
+          <span class="btn-label">Ver Disponibilidad</span><span class="spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div id="resultadosDisponibilidad" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <h2>¿Por qué agendar con HoraPix?</h2>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="icon-circle pink">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </div>
+        <h3>Sin Doble Cita</h3>
+        <p>Control de concurrencia en tiempo real que deshabilita horarios ya ocupados.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle navy">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Google Calendar</h3>
+        <p>Sincronización automática de eventos aprobados en la agenda del profesional.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle pink">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3>Alertas e Emails</h3>
+        <p>Notificaciones instantáneas y recordatorios automáticos para evitar ausencias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como-funciona">
+  <div class="container">
+    <h2>Cómo funciona</h2>
+    <div class="steps">
+      <div class="step"><p class="step-num">PASO 01</p><h3>Elige especialidad y horario</h3><p>Solo verás horarios realmente disponibles del profesional que elijas.</p></div>
+      <div class="step"><p class="step-num">PASO 02</p><h3>Sube tu comprobante</h3><p>Adjunta tu comprobante de pago para reservar el espacio de inmediato.</p></div>
+      <div class="step"><p class="step-num">PASO 03</p><h3>Recibe la confirmación</h3><p>Te avisamos por correo y agregamos el evento a tu calendario.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light" id="especialidades">
+  <div class="container">
+    <h2>Especialidades</h2>
+    <div class="chips">
+      <span class="chip available"><span class="dot"></span> Psicología Clínica</span>
+      <span class="chip soon"><span class="dot"></span> Medicina General <span class="tag-soon">Próximamente</span></span>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="container footer-inner">
+    <span>© 2026 HoraPix - Sistema de Agendamiento Digital. Todos los derechos reservados.</span>
+    <strong>Confianza y Bienestar</strong>
+  </div>
+</footer>
+
+<!-- ---------- Modal: reservar cita (invitado) ---------- -->
+<div class="modal-overlay" id="modalReserva">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalReservaTitle">
+    <button class="modal-close" aria-label="Cerrar" onclick="cerrarModal('modalReserva')">✕</button>
+    <h3 id="modalReservaTitle">Confirmar tu cita</h3>
+    <p class="modal-sub">Completa tus datos. Tu cita quedará <strong>pendiente</strong> hasta verificar el pago.</p>
+
+    <div class="booking-summary" id="resumenReserva"></div>
+
+    <form id="formReserva" novalidate>
+      <div class="field" id="fieldNombre">
+        <label for="rNombre">Nombre completo</label>
+        <input type="text" id="rNombre" required>
+        <p class="field-error">Ingresa tu nombre completo (mínimo 3 caracteres).</p>
+      </div>
+      <div class="field" id="fieldEmail">
+        <label for="rEmail">Correo electrónico</label>
+        <input type="email" id="rEmail" required>
+        <p class="field-error">Ingresa un correo electrónico válido.</p>
+      </div>
+      <div class="field">
+        <label for="rTelefono">Teléfono (opcional)</label>
+        <input type="tel" id="rTelefono" placeholder="+502 5555-5555">
+      </div>
+      <div class="field" id="fieldComprobante">
+        <label for="rComprobante">Comprobante de pago (PNG o JPG, máx. 5MB)</label>
+        <label class="file-drop" id="fileDrop" for="rComprobante">Toca para adjuntar tu comprobante</label>
+        <input type="file" id="rComprobante" accept="image/png,image/jpeg" class="visually-hidden">
+        <p class="field-error">Adjunta un comprobante válido (PNG/JPG, máx. 5MB).</p>
+      </div>
+      <button class="btn btn-pink btn-block" id="btnConfirmarReserva" type="submit">
+        <span class="btn-label">Confirmar Cita</span><span class="spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span aria-hidden="true">✅</span>
+  <div><strong id="toastTitle"></strong><p id="toastBody"></p></div>
+</div>
+
+<script>
+/* =====================================================================
+   UTILIDADES (duplicadas por página en esta etapa de "vista";
+   en la versión modular pasan a /js/utils.js compartido)
+   ===================================================================== */
+function escapeHTML(str){
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function delay(ms){ return new Promise(r => setTimeout(r, ms)); }
+function sumarMinutos(hhmm, minutos){
+  const [h,m] = hhmm.split(':').map(Number);
+  const total = h*60 + m + minutos;
+  const hh = Math.floor((total/60) % 24).toString().padStart(2,'0');
+  const mm = (total % 60).toString().padStart(2,'0');
+  return `${hh}:${mm}`;
+}
+function formatHora12(hhmm){
+  const [h,m] = hhmm.split(':').map(Number);
+  const suf = h >= 12 ? 'PM' : 'AM';
+  const h12 = ((h % 12) || 12);
+  return `${h12}:${m.toString().padStart(2,'0')} ${suf}`;
+}
+function formatFechaCorta(iso){
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('es-GT', { day:'2-digit', month:'2-digit', year:'numeric' });
+}
+
+/* =====================================================================
+   CAPA DE DATOS — HoraPixAPI
+   Cada método tiene una implementación MOCK activa (para esta etapa de
+   vista) y, comentada justo debajo, la llamada REAL equivalente al
+   backend FastAPI + MySQL (HPP1). Cuando el backend esté desplegado,
+   basta con activar el bloque REAL y borrar el MOCK.
+   (En la versión modular, este objeto vive en /js/api.js compartido)
+   ===================================================================== */
+const API_BASE = 'http://localhost:8000'; // TODO: cambiar por la URL real (HTTPS) del backend
+
+const HoraPixAPI = (() => {
+
+  async function getDisponibilidad({ especialidad, fecha, hora }) {
+    // ---- MOCK ----
+    await delay(500);
+    const profesionales = ['Dra. Fernanda Solís','Dr. Mario Küng','Lic. Paola Reyes'];
+    return profesionales.map((nombre, i) => ({
+      id_profesional: i + 1,
+      profesional: nombre,
+      especialidad,
+      fecha,
+      hora: sumarMinutos(hora, i * 60)
+    }));
+    // ---- REAL ----
+    // const qs = new URLSearchParams({ especialidad, fecha, hora });
+    // const res = await fetch(`${API_BASE}/api/disponibilidad?${qs}`, { credentials: 'include' });
+    // if (!res.ok) throw new Error('No se pudo consultar disponibilidad.');
+    // return res.json();
+  }
+
+  async function crearCitaPublica(payload) {
+    // ---- MOCK ----
+    await delay(800);
+    return { id_cita: Math.floor(Math.random() * 9000) + 100, estado: 'PENDIENTE' };
+    // ---- REAL ----
+    // const form = new FormData();
+    // form.append('id_profesional', payload.id_profesional);
+    // form.append('fecha', payload.fecha);
+    // form.append('hora', payload.hora);
+    // form.append('nombre', payload.nombre);
+    // form.append('email', payload.email);
+    // form.append('telefono', payload.telefono || '');
+    // form.append('comprobante', payload.comprobante); // File
+    // const res = await fetch(`${API_BASE}/api/citas/publica`, { method:'POST', credentials:'include', body: form });
+    // if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e.detail || 'No se pudo registrar la cita.'); }
+    // return res.json();
+  }
+
+  async function getSesionActual() {
+    // ---- MOCK ----
+    const raw = sessionStorage.getItem('horapix_sesion');
+    return raw ? JSON.parse(raw) : null;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/auth/me`, { credentials: 'include' });
+    // if (!res.ok) return null;
+    // return res.json();
+  }
+
+  return { getDisponibilidad, crearCitaPublica, getSesionActual };
+})();
+
+/* =====================================================================
+   INTERACCIÓN — landing page
+   ===================================================================== */
+document.addEventListener('DOMContentLoaded', async () => {
+  // Menú móvil
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Fecha mínima = hoy
+  const fechaInput = document.getElementById('fecha');
+  const hoyISO = new Date().toISOString().slice(0,10);
+  fechaInput.min = hoyISO;
+  fechaInput.value = hoyISO;
+
+  // Explorar Citas -> desplaza al widget de agendamiento
+  document.getElementById('btnExplorar').addEventListener('click', () => {
+    document.getElementById('agendamiento').scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  // ¿Ya hay sesión activa? Cambia el CTA del header y muestra aviso de portal si aplica
+  const sesion = await HoraPixAPI.getSesionActual();
+  const loginCta = document.getElementById('loginCta');
+  if (sesion) {
+    loginCta.textContent = 'Ir a mi panel';
+    loginCta.href = sesion.rol === 'Administrador' ? 'admin.html' : (sesion.rol === 'Profesional' ? 'dashboard.html' : 'index.html');
+  }
+  if (new URLSearchParams(location.search).get('portal') === 'proximamente') {
+    document.getElementById('clientPortalBanner').classList.add('visible');
+  }
+
+  // Búsqueda de disponibilidad
+  const form = document.getElementById('formDisponibilidad');
+  const btnBuscar = document.getElementById('btnVerDisponibilidad');
+  const resultados = document.getElementById('resultadosDisponibilidad');
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    let valido = true;
+    const especialidad = document.getElementById('especialidad').value;
+    const fecha = fechaInput.value;
+    const hora = document.getElementById('hora').value;
+
+    toggleFieldError('fieldEspecialidad', !especialidad);
+    const fechaValida = fecha && fecha >= hoyISO;
+    toggleFieldError('fieldFechaHora', !fechaValida || !hora);
+    if (!especialidad || !fechaValida || !hora) valido = false;
+    if (!valido) return;
+
+    setLoading(btnBuscar, true);
+    try {
+      const slots = await HoraPixAPI.getDisponibilidad({ especialidad, fecha, hora });
+      renderSlots(slots, especialidad);
+    } catch (err) {
+      resultados.innerHTML = `<p class="empty-note">${escapeHTML(err.message)}</p>`;
+      resultados.classList.add('visible');
+    } finally {
+      setLoading(btnBuscar, false);
+    }
+  });
+
+  function toggleFieldError(fieldId, hasError){
+    document.getElementById(fieldId).classList.toggle('has-error', !!hasError);
+  }
+
+  function renderSlots(slots, especialidad){
+    if (!slots.length){
+      resultados.innerHTML = `<p class="empty-note">No hay horarios disponibles para esa fecha. Prueba con otro día.</p>`;
+    } else {
+      resultados.innerHTML = `<p class="slot-title">Horarios disponibles</p>` + slots.map(s => `
+        <div class="slot">
+          <div class="slot-info">
+            <strong>${escapeHTML(formatHora12(s.hora))} · ${escapeHTML(s.profesional)}</strong>
+            <span>${escapeHTML(especialidad)} · ${escapeHTML(formatFechaCorta(s.fecha))}</span>
+          </div>
+          <button class="btn btn-outline" type="button" data-slot='${escapeHTML(JSON.stringify(s))}'>Reservar</button>
+        </div>`).join('');
+      resultados.querySelectorAll('[data-slot]').forEach(btn => {
+        btn.addEventListener('click', () => abrirReserva(JSON.parse(btn.dataset.slot)));
+      });
+    }
+    resultados.classList.add('visible');
+  }
+
+  function setLoading(btn, loading){
+    btn.classList.toggle('is-loading', loading);
+    btn.disabled = loading;
+  }
+
+  /* ---------- Modal de reserva (invitado) ---------- */
+  let slotSeleccionado = null;
+  function abrirReserva(slot){
+    slotSeleccionado = slot;
+    document.getElementById('resumenReserva').innerHTML = `
+      <div><span>Profesional</span><span>${escapeHTML(slot.profesional)}</span></div>
+      <div><span>Especialidad</span><span>${escapeHTML(slot.especialidad)}</span></div>
+      <div><span>Fecha</span><span>${escapeHTML(formatFechaCorta(slot.fecha))}</span></div>
+      <div><span>Hora</span><span>${escapeHTML(formatHora12(slot.hora))}</span></div>`;
+    abrirModal('modalReserva');
+  }
+
+  const fileInput = document.getElementById('rComprobante');
+  const fileDrop = document.getElementById('fileDrop');
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]){
+      fileDrop.textContent = `Archivo: ${fileInput.files[0].name}`;
+      fileDrop.classList.add('has-file');
+    }
+  });
+
+  document.getElementById('formReserva').addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const nombre = document.getElementById('rNombre').value.trim();
+    const email = document.getElementById('rEmail').value.trim();
+    const archivo = fileInput.files[0];
+
+    const nombreValido = nombre.length >= 3;
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const archivoValido = archivo && ['image/png','image/jpeg'].includes(archivo.type) && archivo.size <= 5*1024*1024;
+
+    toggleFieldError('fieldNombre', !nombreValido);
+    toggleFieldError('fieldEmail', !emailValido);
+    toggleFieldError('fieldComprobante', !archivoValido);
+    if (!nombreValido || !emailValido || !archivoValido) return;
+
+    const btn = document.getElementById('btnConfirmarReserva');
+    setLoading(btn, true);
+    try {
+      const res = await HoraPixAPI.crearCitaPublica({
+        id_profesional: slotSeleccionado.id_profesional,
+        fecha: slotSeleccionado.fecha,
+        hora: slotSeleccionado.hora,
+        nombre, email,
+        telefono: document.getElementById('rTelefono').value.trim(),
+        comprobante: archivo
+      });
+      cerrarModal('modalReserva');
+      mostrarToast('¡Cita registrada!', `Quedó como ${res.estado}. Te avisaremos por correo cuando se verifique tu comprobante de pago.`);
+      ev.target.reset();
+      fileDrop.textContent = 'Toca para adjuntar tu comprobante';
+      fileDrop.classList.remove('has-file');
+    } catch (err) {
+      mostrarToast('No pudimos registrar tu cita', err.message);
+    } finally {
+      setLoading(btn, false);
+    }
+  });
+});
+
+function abrirModal(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function cerrarModal(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => cerrarModal(m.id)); });
+document.addEventListener('click', (e) => { if (e.target.classList.contains('modal-overlay')) cerrarModal(e.target.id); });
+
+let toastTimer;
+function mostrarToast(titulo, cuerpo){
+  const toast = document.getElementById('toast');
+  document.getElementById('toastTitle').textContent = titulo;
+  document.getElementById('toastBody').textContent = cuerpo;
+  toast.classList.add('visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('visible'), 6000);
+}
+</script>
+</body>
+</html>

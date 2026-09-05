@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoraPix · Iniciar sesión</title>
+<style>
+:root{
+  --navy-900:#0B1524; --navy-800:#111E33; --navy-700:#1B2A42;
+  --pink-500:#E31C79; --pink-600:#C2135F; --pink-50:#FDEAF1;
+  --bg:#F5F6FA; --white:#FFFFFF;
+  --text:#111827; --text-soft:#6B7280; --border:#E5E7EB;
+  --danger:#DC2626; --danger-bg:#FEE2E2;
+  --radius-md:12px; --radius-lg:20px;
+  --shadow-lg:0 20px 45px rgba(15,23,42,.18);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg);min-height:100vh;-webkit-font-smoothing:antialiased;}
+:focus-visible{outline:3px solid var(--pink-500);outline-offset:2px;}
+a{color:inherit;}
+
+.wrap{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;}
+.brand-side{background:var(--navy-900);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:48px;position:relative;overflow:hidden;}
+.brand-side::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(227,28,121,.25),transparent 70%);top:-160px;right:-160px;}
+.logo{font-size:1.5rem;font-weight:800;position:relative;z-index:1;}
+.logo .pix{color:var(--pink-500);}
+.brand-copy{position:relative;z-index:1;max-width:34ch;}
+.brand-copy h1{font-size:1.9rem;line-height:1.25;margin:0 0 14px;}
+.brand-copy p{color:#B7C0CD;font-size:.95rem;line-height:1.6;}
+.brand-foot{position:relative;z-index:1;font-size:.78rem;color:#7C8AA0;}
+
+.form-side{display:flex;align-items:center;justify-content:center;padding:40px 24px;}
+.form-card{width:100%;max-width:380px;}
+.form-card h2{font-size:1.4rem;margin:0 0 4px;}
+.form-card .sub{color:var(--text-soft);font-size:.88rem;margin:0 0 28px;}
+
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:.78rem;font-weight:700;color:var(--navy-800);margin-bottom:8px;}
+.input-wrap{position:relative;}
+.field input{width:100%;font-family:inherit;font-size:.92rem;padding:.75rem .85rem;border:1.5px solid var(--border);border-radius:10px;background:#fff;color:var(--text);}
+.field input:focus{border-color:var(--pink-500);}
+.field.has-error input{border-color:var(--danger);}
+.field-error{display:none;color:var(--danger);font-size:.76rem;margin-top:6px;font-weight:600;}
+.field.has-error .field-error{display:block;}
+.toggle-pw{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;color:var(--text-soft);padding:4px;}
+
+.alert{display:none;background:var(--danger-bg);color:#991B1B;padding:12px 14px;border-radius:10px;font-size:.85rem;font-weight:600;margin-bottom:18px;}
+.alert.visible{display:block;}
+
+.btn{font-family:inherit;font-size:.92rem;font-weight:700;border-radius:10px;padding:.85rem 1.2rem;border:1px solid transparent;cursor:pointer;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--pink-500);color:#fff;transition:background-color .15s ease;}
+.btn:hover{background:var(--pink-600);}
+.btn[disabled]{opacity:.6;cursor:not-allowed;}
+.spinner{display:none;width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:spin .7s linear infinite;}
+.btn.is-loading .spinner{display:inline-block;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.back-link{display:inline-block;margin-top:22px;font-size:.85rem;color:var(--text-soft);text-decoration:none;}
+.back-link:hover{color:var(--text);}
+
+details.demo-box{margin-top:26px;border:1px dashed var(--border);border-radius:10px;padding:12px 14px;font-size:.8rem;color:var(--text-soft);}
+details.demo-box summary{cursor:pointer;font-weight:700;color:var(--navy-800);}
+details.demo-box table{width:100%;margin-top:10px;border-collapse:collapse;}
+details.demo-box td{padding:4px 0;border-bottom:1px solid var(--border);}
+details.demo-box code{background:var(--bg);padding:2px 6px;border-radius:4px;}
+
+@media (max-width:840px){
+  .wrap{grid-template-columns:1fr;}
+  .brand-side{padding:32px;min-height:220px;}
+  .brand-copy h1{font-size:1.4rem;}
+}
+@media (prefers-reduced-motion:reduce){ *{animation-duration:.001ms!important;transition-duration:.001ms!important;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand-side">
+    <div class="logo">HORA<span class="pix">PIX</span></div>
+    <div class="brand-copy">
+      <h1>Tu agenda, siempre bajo control.</h1>
+      <p>Accede a tu panel para revisar citas, gestionar tu directorio de clientes y ver tu rendimiento del mes.</p>
+    </div>
+    <div class="brand-foot">HoraPix · Sistema de Agendamiento Digital</div>
+  </div>
+
+  <div class="form-side">
+    <div class="form-card">
+      <h2>Iniciar sesión</h2>
+      <p class="sub">Ingresa tus credenciales para continuar.</p>
+
+      <div class="alert" id="loginAlert" role="alert"></div>
+
+      <form id="formLogin" novalidate>
+        <div class="field" id="fieldEmail">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" autocomplete="username" required>
+          <p class="field-error">Ingresa un correo electrónico válido.</p>
+        </div>
+        <div class="field" id="fieldPassword">
+          <label for="password">Contraseña</label>
+          <div class="input-wrap">
+            <input type="password" id="password" autocomplete="current-password" required>
+            <button type="button" class="toggle-pw" id="togglePw" aria-label="Mostrar contraseña">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <p class="field-error">Ingresa tu contraseña.</p>
+        </div>
+        <button class="btn" id="btnLogin" type="submit">
+          <span class="btn-label">Iniciar Sesión</span><span class="spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <a class="back-link" href="index.html">← Volver al inicio</a>
+
+      <details class="demo-box">
+        <summary>Credenciales de demostración (solo etapa de vista)</summary>
+        <table>
+          <tr><td>Administrador</td><td><code>admin@horapix.com</code> / <code>Admin123!</code></td></tr>
+          <tr><td>Profesional</td><td><code>profesional@horapix.com</code> / <code>Clinica123!</code></td></tr>
+          <tr><td>Cliente</td><td><code>cliente@horapix.com</code> / <code>Cliente123!</code></td></tr>
+        </table>
+      </details>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   Usuarios de demostración — SOLO para esta etapa de vista.
+   Al conectar el backend real, este arreglo se elimina por completo:
+   la verificación de credenciales ocurre en el servidor (bcrypt) y
+   nunca en el navegador.
+   ===================================================================== */
+const DEMO_USERS = [
+  { id_usuario: 1, email:'admin@horapix.com',       password:'Admin123!',   rol:'Administrador', nombre:'Equipo HoraPix' },
+  { id_usuario: 2, email:'profesional@horapix.com', password:'Clinica123!', rol:'Profesional',   nombre:'Dra. Fernanda Solís' },
+  { id_usuario: 3, email:'cliente@horapix.com',      password:'Cliente123!', rol:'Cliente',       nombre:'Ana López' }
+];
+
+const API_BASE = 'http://localhost:8000'; // TODO: URL real (HTTPS) del backend
+
+const HoraPixAPI = (() => {
+  function delay(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+  async function login(email, password){
+    // ---- MOCK (etapa de vista) ----
+    await delay(600);
+    const user = DEMO_USERS.find(u => u.email === email && u.password === password);
+    if (!user){
+      const e = new Error('Correo o contraseña incorrectos.');
+      e.status = 401;
+      throw e;
+    }
+    const sesion = { id_usuario:user.id_usuario, nombre:user.nombre, rol:user.rol, email:user.email };
+    sessionStorage.setItem('horapix_sesion', JSON.stringify(sesion));
+    // Cookie NO httpOnly, solo como referencia visual de "sesión activa" en modo vista.
+    // La cookie real de sesión es httpOnly + Secure + SameSite y la crea el backend.
+    document.cookie = 'horapix_demo=1; path=/; SameSite=Lax';
+    return sesion;
+
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/auth/login`, {
+    //   method: 'POST',
+    //   credentials: 'include', // necesario para que el navegador guarde/envíe la cookie httpOnly
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ email, password })
+    // });
+    // if (!res.ok) {
+    //   const e = new Error('Correo o contraseña incorrectos.');
+    //   e.status = res.status;
+    //   throw e;
+    // }
+    // return res.json(); // { id_usuario, nombre, rol, email }
+  }
+
+  async function getSesionActual(){
+    // ---- MOCK ----
+    const raw = sessionStorage.getItem('horapix_sesion');
+    return raw ? JSON.parse(raw) : null;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/auth/me`, { credentials: 'include' });
+    // if (!res.ok) return null;
+    // return res.json();
+  }
+
+  return { login, getSesionActual };
+})();
+
+function destinoPorRol(rol){
+  if (rol === 'Administrador') return 'admin.html';
+  if (rol === 'Profesional') return 'dashboard.html';
+  return 'index.html?portal=proximamente'; // Cliente: portal propio aún no construido
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // Si ya hay sesión activa, no mostrar el login: redirigir directo.
+  const sesionExistente = await HoraPixAPI.getSesionActual();
+  if (sesionExistente) {
+    location.href = destinoPorRol(sesionExistente.rol);
+    return;
+  }
+
+  const togglePw = document.getElementById('togglePw');
+  const passwordInput = document.getElementById('password');
+  togglePw.addEventListener('click', () => {
+    const showing = passwordInput.type === 'text';
+    passwordInput.type = showing ? 'password' : 'text';
+    togglePw.setAttribute('aria-label', showing ? 'Mostrar contraseña' : 'Ocultar contraseña');
+  });
+
+  const form = document.getElementById('formLogin');
+  const alertBox = document.getElementById('loginAlert');
+  const btn = document.getElementById('btnLogin');
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    alertBox.classList.remove('visible');
+
+    const email = document.getElementById('email').value.trim();
+    const password = passwordInput.value;
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    document.getElementById('fieldEmail').classList.toggle('has-error', !emailValido);
+    document.getElementById('fieldPassword').classList.toggle('has-error', !password);
+    if (!emailValido || !password) return;
+
+    btn.classList.add('is-loading');
+    btn.disabled = true;
+    try {
+      const sesion = await HoraPixAPI.login(email, password);
+      location.href = destinoPorRol(sesion.rol);
+    } catch (err) {
+      // Mensaje genérico a propósito: nunca revelar si el correo existe o si fue la contraseña.
+      alertBox.textContent = err.message || 'No se pudo iniciar sesión.';
+      alertBox.classList.add('visible');
+    } finally {
+      btn.classList.remove('is-loading');
+      btn.disabled = false;
+    }
+  });
+});
+</script>
+</body>
+</html>

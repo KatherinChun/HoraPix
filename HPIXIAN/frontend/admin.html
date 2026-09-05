@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoraPix · Administración</title>
+<style>
+:root{
+  --navy-900:#0B1524; --navy-800:#111E33; --navy-700:#1B2A42;
+  --pink-500:#E31C79; --pink-600:#C2135F; --pink-50:#FDEAF1;
+  --bg:#F5F6FA; --white:#FFFFFF;
+  --text:#111827; --text-soft:#6B7280; --border:#E5E7EB;
+  --success:#16A34A; --success-bg:#DCFCE7;
+  --warning:#B45309; --warning-bg:#FEF3C7;
+  --danger:#DC2626;  --danger-bg:#FEE2E2;
+  --neutral-bg:#F3F4F6; --neutral-text:#374151;
+  --radius-sm:8px; --radius-md:12px;
+  --shadow-lg:0 20px 45px rgba(15,23,42,.18);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --sidebar-w:240px;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+:focus-visible{outline:3px solid var(--pink-500);outline-offset:2px;}
+
+.app-shell{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--navy-900);color:#fff;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;}
+.sidebar-logo{font-size:1.2rem;font-weight:800;padding:22px 22px 4px;}
+.sidebar-logo .pix{color:var(--pink-500);}
+.sidebar-tag{padding:0 22px 18px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#7C8AA0;font-weight:700;}
+.sidebar-nav{flex:1;padding:8px 12px;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:10px;color:#AEB9CB;font-size:.88rem;font-weight:600;margin-bottom:4px;transition:background-color .15s ease,color .15s ease;cursor:pointer;}
+.nav-item:hover{background:var(--navy-700);color:#fff;}
+.nav-item.active{background:var(--pink-500);color:#fff;}
+.nav-divider{border-top:1px solid var(--navy-700);margin:10px 14px;}
+.sidebar-foot{padding:16px;border-top:1px solid var(--navy-700);}
+.user-chip{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.user-avatar{width:34px;height:34px;border-radius:50%;background:var(--navy-700);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;}
+.user-meta strong{display:block;font-size:.82rem;}
+.user-meta span{font-size:.72rem;color:#8493A8;}
+.btn-logout{display:flex;align-items:center;gap:8px;width:100%;background:none;border:1px solid var(--navy-700);color:#CBD5E1;padding:9px 12px;border-radius:9px;cursor:pointer;font-size:.82rem;font-weight:600;}
+.btn-logout:hover{background:var(--navy-700);color:#fff;}
+
+.main{flex:1;min-width:0;}
+.mobile-topbar{display:none;align-items:center;gap:14px;background:var(--navy-900);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:30;}
+.mobile-topbar button{background:none;border:0;color:#fff;cursor:pointer;padding:4px;}
+.sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(11,21,36,.5);z-index:35;}
+.sidebar-backdrop.visible{display:block;}
+
+#viewRoot{padding:32px 36px;max-width:1080px;animation:fadein .25s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.view-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:24px;}
+.view-header h1{font-size:1.35rem;margin:0;}
+.view-header .search{position:relative;}
+.view-header .search input{width:230px;padding:.6rem 1rem .6rem 2.2rem;border:1.5px solid var(--border);border-radius:9px;font-size:.86rem;font-family:inherit;}
+.view-header .search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-soft);}
+
+.card{background:#fff;border-radius:var(--radius-md);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;}
+thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-soft);padding:12px 18px;border-bottom:1px solid var(--border);}
+tbody td{padding:13px 18px;border-bottom:1px solid var(--border);font-size:.87rem;vertical-align:middle;}
+tbody tr:last-child td{border-bottom:0;}
+.muted{color:var(--text-soft);font-size:.78rem;}
+
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;}
+.badge-Administrador{background:#E0E7FF;color:#3730A3;}
+.badge-Profesional{background:var(--success-bg);color:var(--success);}
+.badge-Cliente{background:var(--neutral-bg);color:var(--neutral-text);}
+.badge-verificado{background:var(--success-bg);color:var(--success);}
+.badge-pendiente{background:var(--warning-bg);color:var(--warning);}
+
+.switch{position:relative;display:inline-block;width:38px;height:22px;flex-shrink:0;}
+.switch input{opacity:0;width:0;height:0;position:absolute;}
+.switch .track{position:absolute;inset:0;background:#CBD5E1;border-radius:999px;transition:.2s;cursor:pointer;}
+.switch .track::before{content:"";position:absolute;height:16px;width:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;}
+.switch input:checked + .track{background:var(--success);}
+.switch input:checked + .track::before{transform:translateX(16px);}
+.switch input:focus-visible + .track{outline:3px solid var(--pink-500);outline-offset:2px;}
+
+.btn{font-size:.84rem;font-weight:700;border-radius:9px;padding:.6rem 1.1rem;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.btn-dark{background:var(--navy-900);color:#fff;}
+.btn-dark:hover{background:#040a13;}
+.btn-outline{background:#fff;border-color:var(--border);color:var(--navy-900);}
+.btn-outline:hover{border-color:var(--navy-800);}
+.btn-sm{padding:.42rem .8rem;font-size:.78rem;}
+
+.soon-panel{padding:60px 24px;text-align:center;color:var(--text-soft);}
+.soon-panel .soon-badge{display:inline-block;background:var(--pink-50);color:var(--pink-600);font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:14px;}
+.soon-panel h2{color:var(--text);margin:0 0 8px;font-size:1.1rem;}
+.soon-panel ul{list-style:none;padding:0;margin:18px auto 0;max-width:360px;text-align:left;font-size:.85rem;}
+.soon-panel li{padding:6px 0;display:flex;gap:8px;}
+.soon-panel li::before{content:"○";color:var(--pink-500);}
+
+.audit-row{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--border);font-size:.84rem;gap:14px;flex-wrap:wrap;}
+.audit-row:last-child{border-bottom:0;}
+.audit-action{font-weight:700;}
+.audit-meta{color:var(--text-soft);font-size:.76rem;}
+
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-900);color:#fff;padding:16px 22px;border-radius:12px;box-shadow:var(--shadow-lg);display:flex;gap:12px;max-width:420px;opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:200;}
+.toast.visible{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+.toast strong{display:block;margin-bottom:2px;font-size:.9rem;}
+.toast p{margin:0;font-size:.82rem;color:#CBD5E1;}
+
+@media (max-width:900px){
+  .sidebar{position:fixed;left:0;top:0;transform:translateX(-100%);transition:transform .25s ease;z-index:40;}
+  .sidebar.open{transform:translateX(0);}
+  .mobile-topbar{display:flex;}
+  #viewRoot{padding:22px 18px;}
+  .view-header .search input{width:100%;}
+}
+@media (prefers-reduced-motion:reduce){ *{animation-duration:.001ms!important;transition-duration:.001ms!important;} }
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">HORA<span class="pix">PIX</span></div>
+    <div class="sidebar-tag">Administración</div>
+    <nav class="sidebar-nav" aria-label="Navegación de administración">
+      <a href="#usuarios" class="nav-item" data-view="usuarios">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Usuarios y Roles
+      </a>
+      <a href="#profesionales" class="nav-item" data-view="profesionales">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+        Profesionales
+      </a>
+      <a href="#configuracion" class="nav-item" data-view="configuracion">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Configuración
+      </a>
+      <a href="#auditoria" class="nav-item" data-view="auditoria">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Auditoría
+      </a>
+      <a href="#reportes-globales" class="nav-item" data-view="reportes-globales">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Reportes Globales
+      </a>
+      <div class="nav-divider"></div>
+      <a href="dashboard.html" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Panel Operativo
+      </a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="user-chip">
+        <div class="user-avatar" id="userAvatar">--</div>
+        <div class="user-meta"><strong id="userNombre">—</strong><span id="userRol">—</span></div>
+      </div>
+      <button class="btn-logout" id="btnLogout" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="mobile-topbar">
+      <button id="btnOpenSidebar" aria-label="Abrir menú"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <span class="title" id="mobileTitle">Administración</span>
+    </div>
+    <main id="viewRoot"></main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span aria-hidden="true">✅</span>
+  <div><strong id="toastTitle"></strong><p id="toastBody"></p></div>
+</div>
+
+<script>
+function escapeHTML(str){ return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function delay(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+/* =====================================================================
+   DATOS MOCK (etapa de vista) — mismo criterio que dashboard.html:
+   nombres y correos ilustrativos, listos para sustituirse por datos
+   reales de las tablas usuario / profesional / auditoria.
+   ===================================================================== */
+let MOCK_USUARIOS = [
+  { id_usuario:1, nombre:'Equipo HoraPix',    email:'admin@horapix.com',        rol:'Administrador', activo:true },
+  { id_usuario:2, nombre:'Fernanda Solís',    email:'profesional@horapix.com',  rol:'Profesional',   activo:true },
+  { id_usuario:3, nombre:'Ana López',         email:'cliente@horapix.com',      rol:'Cliente',       activo:true },
+  { id_usuario:4, nombre:'Mario Küng',        email:'mario.kung@horapix.com',   rol:'Profesional',   activo:true },
+  { id_usuario:5, nombre:'Carlos Ruiz',       email:'carlos.ruiz@email.com',    rol:'Cliente',       activo:true },
+  { id_usuario:6, nombre:'Paola Reyes',       email:'paola.reyes@horapix.com',  rol:'Profesional',   activo:false }
+];
+
+let MOCK_PROFESIONALES = [
+  { id_profesional:2, nombre:'Dra. Fernanda Solís', colegiado_numero:'PSIC-4521', especialidad:'Psicología Clínica', verificado:true },
+  { id_profesional:4, nombre:'Dr. Mario Küng',      colegiado_numero:'PSIC-3390', especialidad:'Psicología Clínica', verificado:true },
+  { id_profesional:6, nombre:'Lic. Paola Reyes',    colegiado_numero:'PSIC-5108', especialidad:'Psicología Clínica', verificado:false }
+];
+
+const MOCK_AUDITORIA = [
+  { fecha_hora:'Hace 12 min', usuario:'Dra. Fernanda Solís', accion:'APROBAR_PAGO',           tabla:'comprobante_pago', ip:'190.53.XXX.XX' },
+  { fecha_hora:'Hace 1 h',    usuario:'Equipo HoraPix',       accion:'ACTUALIZAR_CONFIGURACION', tabla:'configuracion_sistema', ip:'190.53.XXX.XX' },
+  { fecha_hora:'Hace 3 h',    usuario:'Ana López',            accion:'LOGIN_EXITOSO',          tabla:'usuario',          ip:'201.14.XXX.XX' },
+  { fecha_hora:'Ayer',        usuario:'Dr. Mario Küng',       accion:'CANCELAR_CITA',          tabla:'cita',             ip:'190.53.XXX.XX' },
+  { fecha_hora:'Hace 2 días', usuario:'Equipo HoraPix',       accion:'DESACTIVAR_USUARIO',     tabla:'usuario',          ip:'190.53.XXX.XX' }
+];
+
+/* =====================================================================
+   HoraPixAdminAPI — mismo patrón MOCK + REAL comentado que las demás vistas
+   ===================================================================== */
+const API_BASE = 'http://localhost:8000';
+
+const HoraPixAdminAPI = (() => {
+  async function getSesionActual(){
+    const raw = sessionStorage.getItem('horapix_sesion');
+    return raw ? JSON.parse(raw) : null;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/auth/me`, { credentials:'include' });
+    // if (!res.ok) return null;
+    // return res.json();
+  }
+  async function logout(){
+    sessionStorage.removeItem('horapix_sesion');
+    document.cookie = 'horapix_demo=; path=/; Max-Age=0';
+    // ---- REAL ----
+    // await fetch(`${API_BASE}/api/auth/logout`, { method:'POST', credentials:'include' });
+  }
+  async function getUsuarios(query){
+    await delay(250);
+    const q = (query||'').toLowerCase().trim();
+    return MOCK_USUARIOS.filter(u => !q || u.nombre.toLowerCase().includes(q) || u.email.toLowerCase().includes(q));
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/admin/usuarios?q=${encodeURIComponent(query||'')}`, { credentials:'include' });
+    // if (!res.ok) throw new Error('No se pudo cargar la lista de usuarios.');
+    // return res.json();
+  }
+  async function toggleUsuarioActivo(id_usuario){
+    await delay(300);
+    const u = MOCK_USUARIOS.find(x => x.id_usuario === id_usuario);
+    if (u) u.activo = !u.activo;
+    return u;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/admin/usuarios/${id_usuario}/estado`, {
+    //   method:'PATCH', credentials:'include',
+    //   headers:{ 'Content-Type':'application/json', 'X-CSRF-Token': getCsrfTokenFromCookie() },
+    //   body: JSON.stringify({ activo: !u.activo })
+    // });
+    // if (!res.ok) throw new Error('No se pudo actualizar el usuario.');
+    // return res.json();
+  }
+  async function getProfesionales(){
+    await delay(250);
+    return MOCK_PROFESIONALES;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/admin/profesionales`, { credentials:'include' });
+    // if (!res.ok) throw new Error('No se pudo cargar la lista de profesionales.');
+    // return res.json();
+  }
+  async function verificarProfesional(id_profesional){
+    await delay(300);
+    const p = MOCK_PROFESIONALES.find(x => x.id_profesional === id_profesional);
+    if (p) p.verificado = true;
+    return p;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/admin/profesionales/${id_profesional}/verificar`, { method:'PATCH', credentials:'include' });
+    // if (!res.ok) throw new Error('No se pudo verificar al profesional.');
+    // return res.json();
+  }
+  async function getAuditoria(){
+    await delay(250);
+    return MOCK_AUDITORIA;
+    // ---- REAL ----
+    // const res = await fetch(`${API_BASE}/api/admin/auditoria?limite=20`, { credentials:'include' });
+    // if (!res.ok) throw new Error('No se pudo cargar la auditoría.');
+    // return res.json();
+  }
+  return { getSesionActual, logout, getUsuarios, toggleUsuarioActivo, getProfesionales, verificarProfesional, getAuditoria };
+})();
+
+/* =====================================================================
+   GUARDIA DE SESIÓN — solo rol Administrador entra aquí
+   ===================================================================== */
+let SESION = null;
+document.addEventListener('DOMContentLoaded', async () => {
+  SESION = await HoraPixAdminAPI.getSesionActual();
+  if (!SESION) { location.href = 'login.html'; return; }
+  if (SESION.rol === 'Cliente') { location.href = 'index.html?portal=proximamente'; return; }
+  if (SESION.rol === 'Profesional') { location.href = 'dashboard.html'; return; }
+
+  document.getElementById('userNombre').textContent = SESION.nombre;
+  document.getElementById('userRol').textContent = SESION.rol;
+  document.getElementById('userAvatar').textContent = SESION.nombre.split(' ').map(p=>p[0]).slice(0,2).join('').toUpperCase();
+
+  document.getElementById('btnLogout').addEventListener('click', async () => { await HoraPixAdminAPI.logout(); location.href='index.html'; });
+
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  document.getElementById('btnOpenSidebar').addEventListener('click', () => { sidebar.classList.add('open'); backdrop.classList.add('visible'); });
+  backdrop.addEventListener('click', () => { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); });
+  document.querySelectorAll('.nav-item').forEach(a => a.addEventListener('click', () => { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); }));
+
+  window.addEventListener('hashchange', renderView);
+  renderView();
+});
+
+const VISTAS = {
+  'usuarios':          { titulo:'Usuarios y Roles',  render: renderUsuarios },
+  'profesionales':     { titulo:'Profesionales',     render: renderProfesionales },
+  'configuracion':     { titulo:'Configuración',     render: renderProximamente('Configuración del Sistema', ['Moneda y tarifas por defecto','Horario laboral general','Plantillas de notificación','Política de recordatorios']) },
+  'auditoria':         { titulo:'Auditoría',         render: renderAuditoria },
+  'reportes-globales': { titulo:'Reportes Globales', render: renderReportesGlobales }
+};
+
+function renderView(){
+  const ruta = (location.hash || '#usuarios').replace('#','');
+  const vista = VISTAS[ruta] || VISTAS['usuarios'];
+  document.title = `HoraPix · ${vista.titulo}`;
+  document.getElementById('mobileTitle').textContent = vista.titulo;
+  document.querySelectorAll('.nav-item[data-view]').forEach(a => {
+    const activo = a.dataset.view === ruta || (ruta === 'usuarios' && a.dataset.view === 'usuarios');
+    a.classList.toggle('active', activo);
+  });
+  vista.render();
+}
+
+/* ---------- Usuarios y Roles ---------- */
+async function renderUsuarios(){
+  const root = document.getElementById('viewRoot');
+  root.innerHTML = `
+    <div class="view-header">
+      <h1>Usuarios y Roles</h1>
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="buscarUsuario" placeholder="Buscar usuario…">
+      </div>
+    </div>
+    <div class="card" style="overflow-x:auto;">
+      <table><thead><tr><th>Nombre</th><th>Email</th><th>Rol</th><th>Activo</th></tr></thead><tbody id="usuariosBody"></tbody></table>
+    </div>`;
+  const input = document.getElementById('buscarUsuario');
+  let t; input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => pintarUsuarios(input.value), 200); });
+  await pintarUsuarios('');
+}
+async function pintarUsuarios(q){
+  const usuarios = await HoraPixAdminAPI.getUsuarios(q);
+  document.getElementById('usuariosBody').innerHTML = usuarios.map(u => `
+    <tr>
+      <td><strong>${escapeHTML(u.nombre)}</strong></td>
+      <td class="muted">${escapeHTML(u.email)}</td>
+      <td><span class="badge badge-${u.rol}">${escapeHTML(u.rol)}</span></td>
+      <td>
+        <label class="switch">
+          <input type="checkbox" data-toggle-usuario="${u.id_usuario}" ${u.activo ? 'checked' : ''}>
+          <span class="track"></span>
+        </label>
+      </td>
+    </tr>`).join('');
+  document.querySelectorAll('[data-toggle-usuario]').forEach(chk => chk.addEventListener('change', async () => {
+    const id = Number(chk.dataset.toggleUsuario);
+    await HoraPixAdminAPI.toggleUsuarioActivo(id);
+    mostrarToast('Usuario actualizado', chk.checked ? 'La cuenta fue activada.' : 'La cuenta fue desactivada.');
+  }));
+}
+
+/* ---------- Profesionales ---------- */
+async function renderProfesionales(){
+  const root = document.getElementById('viewRoot');
+  root.innerHTML = `
+    <div class="view-header"><h1>Profesionales</h1></div>
+    <div class="card" style="overflow-x:auto;">
+      <table><thead><tr><th>Nombre</th><th>Colegiado</th><th>Especialidad</th><th>Estado</th><th></th></tr></thead><tbody id="profesionalesBody"></tbody></table>
+    </div>`;
+  await pintarProfesionales();
+}
+async function pintarProfesionales(){
+  const profesionales = await HoraPixAdminAPI.getProfesionales();
+  document.getElementById('profesionalesBody').innerHTML = profesionales.map(p => `
+    <tr>
+      <td><strong>${escapeHTML(p.nombre)}</strong></td>
+      <td class="muted">${escapeHTML(p.colegiado_numero)}</td>
+      <td>${escapeHTML(p.especialidad)}</td>
+      <td>${p.verificado ? '<span class="badge badge-verificado">Verificado</span>' : '<span class="badge badge-pendiente">Pendiente</span>'}</td>
+      <td>${p.verificado ? '' : `<button class="btn btn-outline btn-sm" data-verificar="${p.id_profesional}">Verificar</button>`}</td>
+    </tr>`).join('');
+  document.querySelectorAll('[data-verificar]').forEach(btn => btn.addEventListener('click', async () => {
+    await HoraPixAdminAPI.verificarProfesional(Number(btn.dataset.verificar));
+    mostrarToast('Profesional verificado', 'Ahora puede recibir citas con normalidad.');
+    pintarProfesionales();
+  }));
+}
+
+/* ---------- Auditoría ---------- */
+async function renderAuditoria(){
+  const root = document.getElementById('viewRoot');
+  root.innerHTML = `<div class="view-header"><h1>Auditoría</h1></div><div class="card" id="auditoriaList"></div>`;
+  const registros = await HoraPixAdminAPI.getAuditoria();
+  document.getElementById('auditoriaList').innerHTML = registros.map(r => `
+    <div class="audit-row">
+      <div><span class="audit-action">${escapeHTML(r.accion)}</span><div class="audit-meta">${escapeHTML(r.usuario)} · tabla ${escapeHTML(r.tabla)} · IP ${escapeHTML(r.ip)}</div></div>
+      <span class="muted">${escapeHTML(r.fecha_hora)}</span>
+    </div>`).join('');
+}
+
+/* ---------- Reportes Globales ---------- */
+function renderReportesGlobales(){
+  document.getElementById('viewRoot').innerHTML = `
+    <div class="view-header"><h1>Reportes Globales</h1></div>
+    <div class="card soon-panel">
+      <span class="soon-badge">En construcción</span>
+      <h2>Vista consolidada de todos los profesionales</h2>
+      <p>Por ahora, cada profesional ve su propio rendimiento en su panel.</p>
+      <a class="btn btn-dark" style="margin-top:18px;" href="dashboard.html#reportes">Ver Reportes de Profesionales</a>
+    </div>`;
+}
+
+/* ---------- Placeholders genéricos ---------- */
+function renderProximamente(titulo, items){
+  return function(){
+    document.getElementById('viewRoot').innerHTML = `
+      <div class="view-header"><h1>${escapeHTML(titulo)}</h1></div>
+      <div class="card soon-panel">
+        <span class="soon-badge">Próximamente</span>
+        <h2>Esta sección se construirá en la siguiente fase</h2>
+        <ul>${items.map(i => `<li>${escapeHTML(i)}</li>`).join('')}</ul>
+      </div>`;
+  };
+}
+
+/* ---------- Toast ---------- */
+let toastTimer;
+function mostrarToast(titulo, cuerpo){
+  const toast = document.getElementById('toast');
+  document.getElementById('toastTitle').textContent = titulo;
+  document.getElementById('toastBody').textContent = cuerpo;
+  toast.classList.add('visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('visible'), 5000);
+}
+</script>
+</body>
+</html>
