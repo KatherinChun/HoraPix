@@ -93,7 +93,7 @@ function limpiarSesiones() {
             SELECT usuario_id FROM sesiones_activas WHERE activo = 1 AND fecha_expiracion > NOW()
         )
     `;
-    
+
     conexion.query(sql, (error, result) => {
         if (error) {
             console.error("Error al limpiar sesiones:", error);
@@ -110,7 +110,7 @@ conexion.connect((error) => {
         process.exit(1);
     } else {
         console.log("Base de datos conectada exitosamente.");
-        limpiarSesiones(); 
+        limpiarSesiones();
     }
 });
 
